@@ -32,7 +32,7 @@ public class UserManager
 
 			Connection databaseConnection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
 
-			String sql = "SELECT * FROM user_login.user_data WHERE username =?";
+			String sql = "SELECT * FROM user_login.user_data WHERE username = ?";
 
 			PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql);
 			preparedStatement.setString(1, username);
