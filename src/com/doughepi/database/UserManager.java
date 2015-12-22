@@ -132,7 +132,7 @@ public class UserManager
 	 * @param encryptedPassword The encrypted password represented by a byte array.
 	 * @param salt              The salt used to generate the password.
 	 */
-	public void addUser(String username, byte[] encryptedPassword, byte[] salt)
+	public void add(String username, byte[] encryptedPassword, byte[] salt)
 	{
 		try
 		{

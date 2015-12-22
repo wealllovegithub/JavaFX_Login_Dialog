@@ -43,7 +43,7 @@ public class Authentication
 
 		if (!userManager.checkUserExists(username))
 		{
-			userManager.addUser(username, encryptedPassword, salt);
+			userManager.add(username, encryptedPassword, salt);
 		}
 		else
 		{
