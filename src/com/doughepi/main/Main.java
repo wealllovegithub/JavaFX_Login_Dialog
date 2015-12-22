@@ -1,5 +1,8 @@
-package com.doughepi.main;/**
+package com.doughepi.main;
+
+/**
  * Created by dough on 12/20/2015.
+ * <p>
  * The main class, starts the program.
  */
 
@@ -8,15 +11,28 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/**
+ * The main class, the entry point for this application.
+ */
 public class Main extends Application
 {
-	//Main method not used in JavaFX applications, only as a last resort.
+	/**
+	 * The main method is only called as a last resort in
+	 * JavaFX applications.
+	 *
+	 * @param args Java program arguments.
+	 */
 	public static void main(String[] args)
 	{
 		launch(args);
 	}
 
-	//Start method called on startup of JavaFX application.
+	/**
+	 * The start method is inherited from Application and is
+	 * called on startup in JavaFX applications.
+	 *
+	 * @param primaryStage The first stage to be displayed.
+	 */
 	@Override
 	public void start(Stage primaryStage)
 	{
@@ -30,5 +46,7 @@ public class Main extends Application
 		//Finish startup, show the stage.
 		primaryStage.setScene(scene);
 		primaryStage.show();
+
+
 	}
 }

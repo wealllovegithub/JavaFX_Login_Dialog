@@ -3,13 +3,21 @@ package com.doughepi.main;
 /**
  * Created by dough on 12/20/2015.
  */
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import org.jetbrains.annotations.Nullable;
 
 public class LoginController
 {
-	//JavaFX injected fields.
+	/**
+	 * A simple session id counter to be incremented on successful login.
+	 */
+	private static int sessionID = 0;
+	/**
+	 * JavaFX injected fields.
+	 */
 	@FXML
 	private TextField user;
 	@FXML
@@ -17,10 +25,12 @@ public class LoginController
 	@FXML
 	private Button loginButton;
 
-	//A simple session id counter.
-	private static int sessionID = 0;
-
-	//On call of initializeManager, set event handlers.
+	/**
+	 * When called, a sessionID generation attempt is made.
+	 * If successful, a switch to the main view is made.
+	 *
+	 * @param manager The manager object.
+	 */
 	public void initializeManager(final Manager manager)
 	{
 		loginButton.setOnAction(event ->
@@ -37,6 +47,12 @@ public class LoginController
 		});
 	}
 
+	/**
+	 * When called, checks the entered credentials.
+	 *
+	 * @return A generated session id if login credentials pass. If not, null is returned.
+	 */
+	@Nullable
 	private String checkCredentials()
 	{
 		if (user.getText().equals("open") && password.getText().equals("sesame"))
@@ -49,7 +65,11 @@ public class LoginController
 		}
 	}
 
-	//Increment the session id and return a string.
+	/**
+	 * Generates a simple session id by incrementing the session id field.
+	 *
+	 * @return The session id.
+	 */
 	private String generateSessionID()
 	{
 		sessionID++;
