@@ -1,6 +1,7 @@
 package com.doughepi.authentication;
 
 import com.doughepi.database.UserManager;
+import com.doughepi.exceptions.UsernameTakenException;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -33,7 +34,7 @@ public class Authentication
 	 * @throws InvalidKeySpecException
 	 */
 
-	public void addUser(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException
+	public void addUser(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException, UsernameTakenException
 	{
 		byte[] salt = generateSalt();
 		byte[] encryptedPassword = getEncryptedPassword(password, salt);
@@ -46,7 +47,7 @@ public class Authentication
 		}
 		else
 		{
-			System.out.println("Password is taken...");
+			throw new UsernameTakenException("That username is already taken...");
 		}
 	}
 
