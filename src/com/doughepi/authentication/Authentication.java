@@ -32,6 +32,7 @@ public class Authentication
 	 * @throws NoSuchAlgorithmException
 	 * @throws InvalidKeySpecException
 	 */
+
 	public void addUser(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException
 	{
 		byte[] salt = generateSalt();
