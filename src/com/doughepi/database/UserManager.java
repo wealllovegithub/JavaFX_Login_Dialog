@@ -21,7 +21,7 @@ public class UserManager
 	 * Checks the database for instances of the same username.
 	 *
 	 * @param username The username to be searched for.
-	 * @return Returns true if the username is available for use, false if not.
+	 * @return Returns true if the username exists, false if not.
 	 */
 	public boolean checkUserExists(String username)
 	{
