@@ -46,7 +46,5 @@ public class Main extends Application
 		//Finish startup, show the stage.
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
-
 	}
 }

@@ -1,5 +1,7 @@
 package com.doughepi.authentication;
 
+import com.doughepi.database.UserManager;
+
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import java.security.NoSuchAlgorithmException;
@@ -23,6 +25,31 @@ public class Authentication
 	public static final String PBKDF2_WITH_HMAC_SHA1 = "PBKDF2WithHmacSHA1";
 
 	/**
+	 * Encrypt and add password to the database only if password is not already taken.
+	 *
+	 * @param username The preferred username.
+	 * @param password The plaintext password to be encoded.
+	 * @throws NoSuchAlgorithmException
+	 * @throws InvalidKeySpecException
+	 */
+	public void addUser(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException
+	{
+		byte[] salt = generateSalt();
+		byte[] encryptedPassword = getEncryptedPassword(password, salt);
+
+		UserManager userManager = new UserManager();
+
+		if (!userManager.checkUserExists(username))
+		{
+			userManager.addUser(username, encryptedPassword, salt);
+		}
+		else
+		{
+			System.out.println("Password is taken...");
+		}
+	}
+
+	/**
 	 * Used for authenticating a user, compares the users entered plaintext password
 	 * by hashing with the same salt used when the original password was generated. If they
 	 * match, true is returned.
@@ -31,13 +58,18 @@ public class Authentication
 	 * @param encryptedPassword The actual hashed password corresponding to the username entered.
 	 * @param salt              The salt used when the password was hashed. Salts are unique to each user.
 	 * @return True or false depending on if the user entered password matches the correct hashed password on record.
-	 * @throws InvalidKeySpecException
-	 * @throws NoSuchAlgorithmException
 	 */
 	public boolean authenticate(String attemptedPassword, byte[] encryptedPassword, byte[] salt)
-			throws InvalidKeySpecException, NoSuchAlgorithmException
 	{
-		byte[] encryptedAttemtpedPassword = getEncryptedPassword(attemptedPassword, salt);
+		byte[] encryptedAttemtpedPassword = new byte[0];
+		try
+		{
+			encryptedAttemtpedPassword = getEncryptedPassword(attemptedPassword, salt);
+		}
+		catch (InvalidKeySpecException | NoSuchAlgorithmException e)
+		{
+			e.printStackTrace();
+		}
 		return Arrays.equals(encryptedPassword, encryptedAttemtpedPassword);
 	}
 

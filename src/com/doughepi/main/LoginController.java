@@ -4,6 +4,8 @@ package com.doughepi.main;
  * Created by dough on 12/20/2015.
  */
 
+import com.doughepi.authentication.Authentication;
+import com.doughepi.database.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -21,7 +23,7 @@ public class LoginController
 	@FXML
 	private TextField user;
 	@FXML
-	private TextField password;
+	private TextField pass;
 	@FXML
 	private Button loginButton;
 
@@ -50,19 +52,26 @@ public class LoginController
 	/**
 	 * When called, checks the entered credentials.
 	 *
-	 * @return A generated session id if login credentials pass. If not, null is returned.
+	 * @return A session id is generated if login credentials pass. If not, null is returned.
 	 */
 	@Nullable
 	private String checkCredentials()
 	{
-		if (user.getText().equals("open") && password.getText().equals("sesame"))
+		String sessionID = null;
+
+		String username = user.getText();
+		String password = pass.getText();
+
+		UserManager userManager = new UserManager();
+		byte[] userPassword = userManager.getUserPassword(username);
+		byte[] userSalt = userManager.getUserSalt(username);
+
+		Authentication authentication = new Authentication();
+		if (userManager.checkUserExists(username) && authentication.authenticate(password, userPassword, userSalt))
 		{
-			return generateSessionID();
+			sessionID = generateSessionID();
 		}
-		else
-		{
-			return null;
-		}
+		return sessionID;
 	}
 
 	/**
