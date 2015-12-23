@@ -2,6 +2,7 @@
 ### Java template
 *.class
 .idea
+lib
 out
 /My Login.iml
 
