@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 /**
  * @author Piper Dougherty
- * @version 1.0
+ * @version 1.1
  */
 public class Authentication
 {
@@ -38,15 +38,8 @@ public class Authentication
 			byte[] salt = new byte[0];
 			byte[] encryptedPassword = new byte[0];
 
-			try
-			{
-				salt = generateSalt();
-				encryptedPassword = getEncryptedPassword(password, salt);
-			}
-			catch (NoSuchAlgorithmException | InvalidKeySpecException e)
-			{
-				e.printStackTrace();
-			}
+			salt = generateSalt();
+			encryptedPassword = getEncryptedPassword(password, salt);
 			userManager.add(username, encryptedPassword, salt);
 		}
 		else
@@ -68,14 +61,7 @@ public class Authentication
 	public boolean authenticate(String attemptedPassword, byte[] encryptedPassword, byte[] salt)
 	{
 		byte[] encryptedAttemtpedPassword = new byte[0];
-		try
-		{
-			encryptedAttemtpedPassword = getEncryptedPassword(attemptedPassword, salt);
-		}
-		catch (InvalidKeySpecException | NoSuchAlgorithmException e)
-		{
-			e.printStackTrace();
-		}
+		encryptedAttemtpedPassword = getEncryptedPassword(attemptedPassword, salt);
 		return Arrays.equals(encryptedPassword, encryptedAttemtpedPassword);
 	}
 
@@ -86,18 +72,27 @@ public class Authentication
 	 * @param password The password entered by the user to be encrypted.
 	 * @param salt     The salt to be used. Use of generateSalt() is recommended.
 	 * @return The hashed password.
-	 * @throws InvalidKeySpecException
-	 * @throws NoSuchAlgorithmException
 	 */
 	public byte[] getEncryptedPassword(String password, byte[] salt)
-			throws InvalidKeySpecException, NoSuchAlgorithmException
 	{
+		byte[] encryptedPassword = null;
 
 		int derivedKeyLength = 160;
 		int iterations = 20000;
+
 		KeySpec keySpec = new PBEKeySpec(password.toCharArray(), salt, iterations, derivedKeyLength);
-		SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance(PBKDF2_WITH_HMAC_SHA1);
-		return secretKeyFactory.generateSecret(keySpec).getEncoded();
+		SecretKeyFactory secretKeyFactory;
+
+		try
+		{
+			secretKeyFactory = SecretKeyFactory.getInstance(PBKDF2_WITH_HMAC_SHA1);
+			encryptedPassword = secretKeyFactory.generateSecret(keySpec).getEncoded();
+		}
+		catch (NoSuchAlgorithmException | InvalidKeySpecException e)
+		{
+			e.printStackTrace();
+		}
+		return encryptedPassword;
 	}
 
 
@@ -109,11 +104,22 @@ public class Authentication
 	 * @return A randomly generated salt.
 	 * @throws NoSuchAlgorithmException
 	 */
-	public byte[] generateSalt() throws NoSuchAlgorithmException
+	public byte[] generateSalt()
 	{
-		SecureRandom secureRandom = SecureRandom.getInstance(SHA1_PRNG);
+		SecureRandom secureRandom = null;
+
+		try
+		{
+			secureRandom = SecureRandom.getInstance(SHA1_PRNG);
+		}
+		catch (NoSuchAlgorithmException e)
+		{
+			e.printStackTrace();
+		}
+
 		byte[] salt = new byte[8];
 		secureRandom.nextBytes(salt);
+
 		return salt;
 	}
 }
