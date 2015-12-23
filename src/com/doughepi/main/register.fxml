@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.40"
            fx:controller="com.doughepi.main.RegisterController">
     <padding>
@@ -14,15 +15,27 @@
                 <children>
                     <GridPane maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
                         <children>
-                            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Label>
+                            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Label>
                             <TextField fx:id="user" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1"
                                        GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0"/>
                             <TextField fx:id="pass" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1"
                                        GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"/>
                             <TextField fx:id="secondPass" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1"
                                        GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"/>
-                            <Label text="Enter again:" GridPane.rowIndex="2"/>
+                            <Label text="Enter again:" GridPane.rowIndex="2">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Label>
                         </children>
                         <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="72.0"/>
@@ -43,7 +56,11 @@
                         </rowConstraints>
                         <children>
                             <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" textFill="RED"
-                                   GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                                   GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Label>
                         </children>
                     </GridPane>
                     <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
@@ -52,9 +69,16 @@
                                 <HBox.margin>
                                     <Insets right="5.0"/>
                                 </HBox.margin>
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
                             </Button>
                             <Button fx:id="registerButton" alignment="CENTER" defaultButton="true"
-                                    mnemonicParsing="false" text="Register"/>
+                                    mnemonicParsing="false" text="Register">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Button>
                         </children>
                     </HBox>
                 </children>

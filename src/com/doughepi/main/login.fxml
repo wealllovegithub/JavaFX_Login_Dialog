@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" prefWidth="231.0" xmlns="http://javafx.com/javafx/8.0.40"
            fx:controller="com.doughepi.main.LoginController">
     <padding>
@@ -14,10 +15,26 @@
                 <children>
                     <GridPane>
                         <children>
-                            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                            <TextField fx:id="user" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                            <TextField fx:id="pass" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Label>
+                            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Label>
+                            <TextField fx:id="user" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </TextField>
+                            <TextField fx:id="pass" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </TextField>
                         </children>
                         <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="109.0"/>
@@ -31,9 +48,17 @@
                     <StackPane prefHeight="-1.0" prefWidth="-1.0">
                         <children>
                             <Button fx:id="loginButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false"
-                                    text="Login" StackPane.alignment="CENTER_RIGHT"/>
+                                    text="Login" StackPane.alignment="CENTER_RIGHT">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Button>
                             <Button fx:id="registerButton" mnemonicParsing="false" text="Register"
-                                    StackPane.alignment="CENTER_LEFT"/>
+                                    StackPane.alignment="CENTER_LEFT">
+                                <font>
+                                    <Font name="Segoe UI Light" size="12.0"/>
+                                </font>
+                            </Button>
                         </children>
                     </StackPane>
                 </children>

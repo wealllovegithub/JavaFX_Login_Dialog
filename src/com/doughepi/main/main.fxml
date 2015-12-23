@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity"
             prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40"
@@ -11,8 +12,16 @@
     <center>
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="sessionLabel" text="Undefined"/>
-                <Button fx:id="logoutButton" defaultButton="true" mnemonicParsing="false" text="Log Out"/>
+                <Label fx:id="sessionLabel" text="Undefined">
+                    <font>
+                        <Font name="Segoe UI Light" size="12.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="logoutButton" defaultButton="true" mnemonicParsing="false" text="Log Out">
+                    <font>
+                        <Font name="Segoe UI Light" size="12.0"/>
+                    </font>
+                </Button>
             </children>
         </VBox>
     </center>

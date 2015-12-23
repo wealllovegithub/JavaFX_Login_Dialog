@@ -43,17 +43,7 @@ public class RegisterController
 	{
 		cancelButton.setOnAction(event -> manager.setScene_Login());
 
-		registerButton.setOnAction(event ->
-		{
-			if (!user.getText().isEmpty()) //TODO username requirement check.
-			{
-				registerUser();
-			}
-			else
-			{
-				setLabel("Please enter username...");
-			}
-		});
+		registerButton.setOnAction(event -> registerUser());
 	}
 
 	/**
@@ -69,14 +59,27 @@ public class RegisterController
 
 		try
 		{
-			if (password.equals(secondPassword))
+			if (username.isEmpty())
 			{
-				authentication.addUser(username, password);
-				setLabel("Successfully added username...");
+				setLabel("Please enter username...");
+			}
+			else if (password.isEmpty())
+			{
+				setLabel("Please enter a password...");
+			}
+			else if (secondPassword.isEmpty())
+			{
+				setLabel("Please enter the password a second time...");
+			}
+			else if (!password.equals(secondPassword))
+			{
+				setLabel("Passwords do not match...");
 			}
 			else
 			{
-				setLabel("Passwords do not match...");
+				authentication.addUser(username, password);
+				setLabel("Successfully added username...");
+				cancelButton.setText("Back");
 			}
 		}
 		catch (UsernameTakenException e)
