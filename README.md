@@ -5,6 +5,14 @@ JavaFX login dialog with SQL username and password storage.
 
 A screenshot.
 
+![Screenshot](https://github.com/doughepi/JavaFX_Login_Dialog/blob/master/register.PNG)
+
+Another screenshot.
+
+![Screenshot](https://github.com/doughepi/JavaFX_Login_Dialog/blob/master/loggedin.png)
+
+Another screenshot.
+
 ***
 
 ##Other
