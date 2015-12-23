@@ -3,6 +3,7 @@ package com.doughepi.main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,14 +15,14 @@ import java.net.URL;
  */
 public class Manager
 {
-	private Scene scene;
+	private Stage stage;
 
 	/**
-	 * @param scene The scene created on start used in all JavaFX applications.
+	 * @param stage The scene created on start used in all JavaFX applications.
 	 */
-	public Manager(Scene scene)
+	public Manager(Stage stage)
 	{
-		this.scene = scene;
+		this.stage = stage;
 	}
 
 	/**
@@ -53,7 +54,7 @@ public class Manager
 		try
 		{
 			Parent root = fxmlLoader.load();
-			scene.setRoot(root);
+			stage.setScene(new Scene(root, 275, 125));
 			LoginController loginController = fxmlLoader.<LoginController>getController();
 			loginController.initializeManager(this);
 		}
@@ -76,7 +77,7 @@ public class Manager
 		try
 		{
 			Parent root = fxmlLoader.load();
-			scene.setRoot(root);
+			stage.setScene(new Scene(root, 600, 400));
 			MainController mainController = fxmlLoader.<MainController>getController();
 			mainController.initializeSessionID(this, sessionID);
 		}

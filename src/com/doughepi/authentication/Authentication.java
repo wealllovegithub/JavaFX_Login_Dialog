@@ -22,7 +22,7 @@ public class Authentication
 	/**
 	 * Constants for algorithmic encryption.
 	 */
-	public static final String SHA_1_PRNG = "SHA1PRNG";
+	public static final String SHA1_PRNG = "SHA1PRNG";
 	public static final String PBKDF2_WITH_HMAC_SHA1 = "PBKDF2WithHmacSHA1";
 
 	/**
@@ -36,13 +36,13 @@ public class Authentication
 
 	public void addUser(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException, UsernameTakenException
 	{
-		byte[] salt = generateSalt();
-		byte[] encryptedPassword = getEncryptedPassword(password, salt);
-
 		UserManager userManager = new UserManager();
 
 		if (!userManager.checkUserExists(username))
 		{
+			byte[] salt = generateSalt();
+			byte[] encryptedPassword = getEncryptedPassword(password, salt);
+
 			userManager.add(username, encryptedPassword, salt);
 		}
 		else
@@ -107,7 +107,7 @@ public class Authentication
 	 */
 	public byte[] generateSalt() throws NoSuchAlgorithmException
 	{
-		SecureRandom secureRandom = SecureRandom.getInstance(SHA_1_PRNG);
+		SecureRandom secureRandom = SecureRandom.getInstance(SHA1_PRNG);
 		byte[] salt = new byte[8];
 		secureRandom.nextBytes(salt);
 		return salt;

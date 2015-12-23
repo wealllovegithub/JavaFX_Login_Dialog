@@ -17,6 +17,7 @@ public class LoginController
 	 * A simple session id counter to be incremented on successful login.
 	 */
 	private static int sessionID = 0;
+
 	/**
 	 * JavaFX injected fields.
 	 */
@@ -28,8 +29,7 @@ public class LoginController
 	private Button loginButton;
 
 	/**
-	 * When called, a sessionID generation attempt is made.
-	 * If successful, a switch to the main view is made.
+	 * When called, a sessionID generation attempt is made. If successful, a switch to the main view is made.
 	 *
 	 * @param manager The manager object.
 	 */
@@ -37,13 +37,10 @@ public class LoginController
 	{
 		loginButton.setOnAction(event ->
 		{
-			//On click, generate a session id if credentials pass.
 			String sessionID = checkCredentials();
 
-			//If credentials fail authentication, null is returned.
 			if (sessionID != null)
 			{
-				//If credentials pass, the scene is set to the main view and a session id is passed.
 				manager.doLogin(sessionID);
 			}
 		});
