@@ -102,7 +102,7 @@ public class Manager
 		{
 			e.printStackTrace();
 		}
-		stage.setScene(new Scene(root, 231, 185));
+		stage.setScene(new Scene(root, 326, 190));
 		RegisterController registerController = fxmlLoader.<RegisterController>getController();
 		registerController.initializeManager(this);
 	}

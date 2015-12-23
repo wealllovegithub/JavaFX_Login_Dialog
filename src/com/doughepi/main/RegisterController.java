@@ -42,6 +42,7 @@ public class RegisterController
 	public void initializeManager(final Manager manager)
 	{
 		cancelButton.setOnAction(event -> manager.setScene_Login());
+
 		registerButton.setOnAction(event ->
 		{
 			if (!user.getText().isEmpty()) //TODO username requirement check.
@@ -71,6 +72,7 @@ public class RegisterController
 			if (password.equals(secondPassword))
 			{
 				authentication.addUser(username, password);
+				setLabel("Successfully added username...");
 			}
 			else
 			{

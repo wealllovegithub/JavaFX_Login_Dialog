@@ -21,6 +21,10 @@ public class Authentication
 	 * Constants for algorithmic encryption.
 	 */
 	public static final String SHA1_PRNG = "SHA1PRNG";
+
+	/**
+	 * Constants for algorithmic encryption.
+	 */
 	public static final String PBKDF2_WITH_HMAC_SHA1 = "PBKDF2WithHmacSHA1";
 
 	/**
@@ -35,8 +39,8 @@ public class Authentication
 
 		if (!userManager.checkUserExists(username))
 		{
-			byte[] salt = new byte[0];
-			byte[] encryptedPassword = new byte[0];
+			byte[] salt;
+			byte[] encryptedPassword;
 
 			salt = generateSalt();
 			encryptedPassword = getEncryptedPassword(password, salt);
@@ -102,7 +106,6 @@ public class Authentication
 	 * table attacks.
 	 *
 	 * @return A randomly generated salt.
-	 * @throws NoSuchAlgorithmException
 	 */
 	public byte[] generateSalt()
 	{
