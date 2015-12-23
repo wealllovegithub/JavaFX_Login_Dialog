@@ -9,7 +9,7 @@ A screenshot.
 
 Another screenshot.
 
-![Screenshot](https://github.com/doughepi/JavaFX_Login_Dialog/blob/master/loggedin.png)
+![Screenshot](https://github.com/doughepi/JavaFX_Login_Dialog/blob/master/loggedin.PNG)
 
 Another screenshot.
 
