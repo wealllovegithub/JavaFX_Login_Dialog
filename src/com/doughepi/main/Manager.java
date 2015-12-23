@@ -54,7 +54,7 @@ public class Manager
 		try
 		{
 			Parent root = fxmlLoader.load();
-			stage.setScene(new Scene(root, 275, 125));
+			stage.setScene(new Scene(root, 231, 115));
 			LoginController loginController = fxmlLoader.<LoginController>getController();
 			loginController.initializeManager(this);
 		}
@@ -85,5 +85,24 @@ public class Manager
 		{
 			e.printStackTrace();
 		}
+	}
+
+	public void setScene_Register()
+	{
+		URL url = getClass().getResource("register.fxml");
+		FXMLLoader fxmlLoader = new FXMLLoader(url);
+
+		Parent root = null;
+		try
+		{
+			root = fxmlLoader.load();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		stage.setScene(new Scene(root, 231, 185));
+		RegisterController registerController = fxmlLoader.<RegisterController>getController();
+		registerController.initializeManager(this);
 	}
 }

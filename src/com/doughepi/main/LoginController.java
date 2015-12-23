@@ -27,6 +27,8 @@ public class LoginController
 	private TextField pass;
 	@FXML
 	private Button loginButton;
+	@FXML
+	private Button registerButton;
 
 	/**
 	 * When called, a sessionID generation attempt is made. If successful, a switch to the main view is made.
@@ -44,6 +46,8 @@ public class LoginController
 				manager.doLogin(sessionID);
 			}
 		});
+
+		registerButton.setOnAction(event -> manager.setScene_Register());
 	}
 
 	/**

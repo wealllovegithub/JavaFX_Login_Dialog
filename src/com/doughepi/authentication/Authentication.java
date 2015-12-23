@@ -30,24 +30,29 @@ public class Authentication
 	 *
 	 * @param username The preferred username.
 	 * @param password The plaintext password to be encoded.
-	 * @throws NoSuchAlgorithmException
-	 * @throws InvalidKeySpecException
 	 */
-
-	public void addUser(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException, UsernameTakenException
+	public void addUser(String username, String password) throws UsernameTakenException
 	{
 		UserManager userManager = new UserManager();
 
 		if (!userManager.checkUserExists(username))
 		{
-			byte[] salt = generateSalt();
-			byte[] encryptedPassword = getEncryptedPassword(password, salt);
-
+			byte[] salt = null;
+			byte[] encryptedPassword = null;
+			try
+			{
+				salt = generateSalt();
+				encryptedPassword = getEncryptedPassword(password, salt);
+			}
+			catch (NoSuchAlgorithmException | InvalidKeySpecException e)
+			{
+				e.printStackTrace();
+			}
 			userManager.add(username, encryptedPassword, salt);
 		}
 		else
 		{
-			throw new UsernameTakenException("That username is already taken...");
+			throw new UsernameTakenException("Username is already taken...");
 		}
 	}
 
