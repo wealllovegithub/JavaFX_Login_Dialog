@@ -1,7 +1,8 @@
 package com.doughepi.exceptions;
 
 /**
- * Created by dough on 12/22/2015.
+ * @author Piper Dougherty
+ * @version 1.0
  */
 public class UsernameTakenException extends Exception
 {

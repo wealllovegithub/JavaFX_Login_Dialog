@@ -1,7 +1,8 @@
 package com.doughepi.main;
 
 /**
- * Created by dough on 12/20/2015.
+ * @author Piper Dougherty
+ * @version 1.0
  * <p>
  * The main class, starts the program.
  */

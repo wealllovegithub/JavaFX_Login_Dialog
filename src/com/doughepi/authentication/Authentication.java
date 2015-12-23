@@ -12,10 +12,8 @@ import java.security.spec.KeySpec;
 import java.util.Arrays;
 
 /**
- * Created by dough on 12/21/2015.
- * <p>
- * It is assumed that if authenticate() is called, the username has
- * already been verified to exist in the database.
+ * @author Piper Dougherty
+ * @version 1.0
  */
 public class Authentication
 {
@@ -37,8 +35,9 @@ public class Authentication
 
 		if (!userManager.checkUserExists(username))
 		{
-			byte[] salt = null;
-			byte[] encryptedPassword = null;
+			byte[] salt = new byte[0];
+			byte[] encryptedPassword = new byte[0];
+
 			try
 			{
 				salt = generateSalt();

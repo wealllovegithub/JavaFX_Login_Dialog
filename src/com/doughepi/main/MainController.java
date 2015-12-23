@@ -5,7 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
- * Created by dough on 12/20/2015.
+ * @author Piper Dougherty
+ * @version 1.0
  * <p>
  * The controller class for the main view, shown after a
  * successful login.

@@ -3,7 +3,8 @@ package com.doughepi.database;
 import java.sql.*;
 
 /**
- * Created by dough on 12/21/2015.
+ * @author Piper Dougherty
+ * @version 1.0
  * <p>
  * Manages the addition of elements to the database.
  */

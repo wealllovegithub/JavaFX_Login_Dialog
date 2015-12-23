@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.net.URL;
 
 /**
- * Created by dough on 12/20/2015.
+ * @author Piper Dougherty
+ * @version 1.0
  * <p>
  * Manages the movement between the login view and the main view.
  */
