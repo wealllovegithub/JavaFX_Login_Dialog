@@ -79,7 +79,9 @@ public class RegisterController
 			{
 				authentication.addUser(username, password);
 				setLabel("Successfully added username...");
+
 				cancelButton.setText("Back");
+				registerButton.setDisable(true);
 			}
 		}
 		catch (UsernameTakenException e)

@@ -109,7 +109,7 @@ public class Authentication
 	 */
 	public byte[] generateSalt()
 	{
-		SecureRandom secureRandom = null;
+		SecureRandom secureRandom = new SecureRandom();
 
 		try
 		{
@@ -121,6 +121,7 @@ public class Authentication
 		}
 
 		byte[] salt = new byte[8];
+
 		secureRandom.nextBytes(salt);
 
 		return salt;
