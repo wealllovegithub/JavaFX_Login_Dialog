@@ -1,0 +1,13 @@
+/*CSS for elements present throughout the application */
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #4676c8 0%,#375d9f 100%);
+    -fx-text-fill: #a7bee5;
+    -fx-font-weight: 900;
+
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #a7bee5 0%,#93add9 100%);
+    -fx-text-fill: #4676c8;
+}

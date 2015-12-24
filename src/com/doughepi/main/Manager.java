@@ -3,6 +3,7 @@ package com.doughepi.main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -51,10 +52,13 @@ public class Manager
 	{
 		URL url = getClass().getResource("login.fxml");
 		FXMLLoader fxmlLoader = new FXMLLoader(url);
-
+		Image loginicon = new Image("img/loginicon.png");
 		try
 		{
 			Parent root = fxmlLoader.load();
+			root.getStylesheets().add("css/global.css");
+			stage.getIcons().add(loginicon);
+			stage.setTitle("Login");
 			stage.setScene(new Scene(root, 231, 115));
 			LoginController loginController = fxmlLoader.<LoginController>getController();
 			loginController.initializeManager(this);
@@ -92,18 +96,21 @@ public class Manager
 	{
 		URL url = getClass().getResource("register.fxml");
 		FXMLLoader fxmlLoader = new FXMLLoader(url);
-
-		Parent root = null;
+		Image registericon = new Image("img/registericon.png");
 		try
 		{
-			root = fxmlLoader.load();
+			Parent root = fxmlLoader.load();
+			root.getStylesheets().add("css/global.css");
+			stage.setTitle("Register");
+			stage.getIcons().add(registericon);
+			stage.setScene(new Scene(root, 326, 190));
+			RegisterController registerController = fxmlLoader.<RegisterController>getController();
+			registerController.initializeManager(this);
 		}
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
-		stage.setScene(new Scene(root, 326, 190));
-		RegisterController registerController = fxmlLoader.<RegisterController>getController();
-		registerController.initializeManager(this);
+
 	}
 }

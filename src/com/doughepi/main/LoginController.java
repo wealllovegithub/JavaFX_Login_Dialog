@@ -2,10 +2,10 @@ package com.doughepi.main;
 
 import com.doughepi.authentication.Authentication;
 import com.doughepi.database.UserManager;
+import com.sun.istack.internal.Nullable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Piper Dougherty

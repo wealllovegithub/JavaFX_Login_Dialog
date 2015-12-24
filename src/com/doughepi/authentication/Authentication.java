@@ -48,7 +48,7 @@ public class Authentication
 		}
 		else
 		{
-			throw new UsernameTakenException("Username is already taken...");
+			throw new UsernameTakenException("Username is already taken.");
 		}
 	}
 
