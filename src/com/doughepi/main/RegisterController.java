@@ -69,7 +69,7 @@ public class RegisterController
 			}
 			else if (secondPassword.isEmpty())
 			{
-				setLabel("Please enter the password a second time...");
+				setLabel("Please enter the password again.");
 			}
 			else if (!password.equals(secondPassword))
 			{

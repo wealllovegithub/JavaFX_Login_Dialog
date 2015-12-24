@@ -103,6 +103,7 @@ public class Manager
 		{
 			Parent root = fxmlLoader.load();
 			root.getStylesheets().add("css/global.css");
+			root.getStylesheets().add("css/register.css");
 			stage.setTitle("Register");
 			stage.getIcons().setAll(registericon);
 			stage.setScene(new Scene(root, 350, 200));
