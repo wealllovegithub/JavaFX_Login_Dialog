@@ -22,6 +22,7 @@ CSS for generics present throughout the entire application.
     -fx-font-weight: 900;
     -fx-background-color: skyblue;
     -fx-text-fill: #2c3e50;
+    -fx-background-radius: 0;
 }
 
 .button:hover {
