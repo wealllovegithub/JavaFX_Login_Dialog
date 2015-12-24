@@ -3,11 +3,10 @@ Caden Sumner <- Shameless Plug.
 CSS for generics present throughout the entire application.
 */
 
-
 /* Universal Styles */
 
 .root {
-    -fx-font-family:"Trebuchet MS",sans-serif;
+    -fx-font-family: "Trebuchet MS", sans-serif;
     -fx-background-color: #2c3e50;
 }
 
@@ -21,7 +20,7 @@ CSS for generics present throughout the entire application.
 
 .button {
     -fx-font-weight: 900;
-    -fx-background-color:skyblue;
+    -fx-background-color: skyblue;
     -fx-text-fill: #2c3e50;
 }
 
@@ -30,9 +29,9 @@ CSS for generics present throughout the entire application.
     -fx-text-fill: #a7bee5;
 }
 
-.button:pressed{
+.button:pressed {
     -fx-background-color: #2c3e50;
-    -fx-text-fill:#a7bee5;
+    -fx-text-fill: #a7bee5;
 }
 
 /* Text Field Styles */
@@ -40,10 +39,10 @@ CSS for generics present throughout the entire application.
 .text-field {
     -fx-text-fill: #537394;
     -fx-background-color: #34495e;
-    -fx-border-color:#2c3e50;
+    -fx-border-color: #2c3e50;
 }
 
-.text-field:focused{
+.text-field:focused {
     -fx-background-color: #445e79;
     -fx-text-fill: blanchedalmond; /*What kind of name is that for a color. */
 }
