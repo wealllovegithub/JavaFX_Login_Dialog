@@ -2,14 +2,13 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<?import javafx.scene.Group?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
 <StackPane xmlns:fx="http://javafx.com/fxml/1" prefWidth="231.0" xmlns="http://javafx.com/javafx/8.0.40"
            fx:controller="com.doughepi.main.LoginController">
     <padding>
-        <Insets bottom="5.0" left="10.0" right="10.0" top="10.0"/>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
     </padding>
     <StackPane>
         <children>
@@ -34,8 +33,8 @@
                             </PasswordField>
                         </children>
                         <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="109.0"/>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="189.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="70.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="140.0"/>
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
