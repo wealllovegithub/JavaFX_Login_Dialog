@@ -13,7 +13,7 @@ Login
 
 Register
 --
-![Register](http://i.imgur.com/EAmI7WT.png)
+![Register](http://i.imgur.com/roi0Dvg.png)
 
 ***
 
