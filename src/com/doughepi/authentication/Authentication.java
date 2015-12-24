@@ -58,7 +58,7 @@ public class Authentication {
      * @return True or false depending on if the user entered password matches the correct hashed password on record.
      */
     public boolean authenticate(String attemptedPassword, byte[] encryptedPassword, byte[] salt) {
-        byte[] encryptedAttemtpedPassword = new byte[0];
+        byte[] encryptedAttemtpedPassword;
         encryptedAttemtpedPassword = getEncryptedPassword(attemptedPassword, salt);
         return Arrays.equals(encryptedPassword, encryptedAttemtpedPassword);
     }
