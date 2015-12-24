@@ -1,45 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<StackPane xmlns:fx="http://javafx.com/fxml/1" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.40"
+<StackPane xmlns:fx="http://javafx.com/fxml/1" prefWidth="350.0" prefHeight="200" xmlns="http://javafx.com/javafx/8.0.40"
            fx:controller="com.doughepi.main.RegisterController">
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
     </padding>
     <StackPane StackPane.alignment="CENTER">
         <children>
-            <VBox maxWidth="1.7976931348623157E308" spacing="10.0" StackPane.alignment="CENTER">
+            <VBox maxWidth="Infinity" spacing="20.0" StackPane.alignment="CENTER">
                 <children>
-                    <GridPane maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                    <GridPane maxWidth="Infinity" VBox.vgrow="ALWAYS">
                         <children>
                             <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                                <font>
-                                    <Font name="Segoe UI Light" size="12.0"/>
-                                </font>
                             </Label>
                             <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                                <font>
-                                    <Font name="Segoe UI Light" size="12.0"/>
-                                </font>
                             </Label>
-                            <TextField fx:id="user" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1"
+                            <TextField fx:id="user" maxWidth="Infinity" GridPane.columnIndex="1"
                                        GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0"/>
-                            <TextField fx:id="pass" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1"
-                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"/>
-                            <TextField fx:id="secondPass" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1"
-                                       GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"/>
+                            <PasswordField fx:id="pass" maxWidth="Infinity" GridPane.columnIndex="1"
+                                           GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"/>
+                            <PasswordField fx:id="secondPass" maxWidth="Infinity" GridPane.columnIndex="1"
+                                           GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"/>
                             <Label text="Enter again:" GridPane.rowIndex="2">
-                                <font>
-                                    <Font name="Segoe UI Light" size="12.0"/>
-                                </font>
                             </Label>
                         </children>
                         <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="72.0"/>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="139.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
@@ -47,37 +36,28 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                         </rowConstraints>
                     </GridPane>
-                    <GridPane alignment="CENTER" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                    <GridPane alignment="CENTER" maxWidth="Infinity" VBox.vgrow="ALWAYS">
                         <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                         </rowConstraints>
                         <children>
-                            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" textFill="RED"
+                            <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER"
                                    GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                <font>
-                                    <Font name="Segoe UI Light" size="12.0"/>
-                                </font>
                             </Label>
                         </children>
                     </GridPane>
-                    <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                    <HBox alignment="CENTER_RIGHT" maxWidth="Infinity" VBox.vgrow="ALWAYS">
                         <children>
                             <Button fx:id="cancelButton" alignment="TOP_LEFT" mnemonicParsing="false" text="Cancel">
                                 <HBox.margin>
-                                    <Insets right="5.0"/>
+                                    <Insets right="10.0"/>
                                 </HBox.margin>
-                                <font>
-                                    <Font name="Segoe UI Light" size="12.0"/>
-                                </font>
                             </Button>
                             <Button fx:id="registerButton" alignment="CENTER" defaultButton="true"
                                     mnemonicParsing="false" text="Register">
-                                <font>
-                                    <Font name="Segoe UI Light" size="12.0"/>
-                                </font>
                             </Button>
                         </children>
                     </HBox>

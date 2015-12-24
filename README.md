@@ -1,11 +1,21 @@
-# JavaFX Login Dialog
-JavaFX login dialog with SQL username and password storage.
+JavaFX Login Dialog
+==
+JavaFX login dialog utilizing SQL to store usernames and passwords.
 
-![Screenshot](https://github.com/doughepi/JavaFX_Login_Dialog/blob/master/login.PNG)
+Passwords are encrypted using SHA1.
+***
 
-A screenshot.
+Login
+--
+![Login](http://i.imgur.com/CSZrXfW.png)
 
 ***
 
-##Other
-Really I'm just trying to learn how to use markdown.
+Register
+--
+![Register](http://i.imgur.com/roi0Dvg.png)
+
+***
+
+Other
+--
