@@ -1,6 +1,6 @@
 JavaFX Login Dialog
 ==
-JavaFX login dialog with SQL username and password storage.
+JavaFX login dialog utilizing SQL to store usernames and passwords.
 
 ***
 
