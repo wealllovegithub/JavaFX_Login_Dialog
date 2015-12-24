@@ -61,11 +61,11 @@ public class RegisterController
 		{
 			if (username.isEmpty())
 			{
-				setLabel("Please enter username...");
+				setLabel("Please enter a username.");
 			}
 			else if (password.isEmpty())
 			{
-				setLabel("Please enter a password...");
+				setLabel("Please enter a password.");
 			}
 			else if (secondPassword.isEmpty())
 			{
@@ -73,12 +73,12 @@ public class RegisterController
 			}
 			else if (!password.equals(secondPassword))
 			{
-				setLabel("Passwords do not match...");
+				setLabel("Passwords do not match.");
 			}
 			else
 			{
 				authentication.addUser(username, password);
-				setLabel("Successfully added username...");
+				setLabel("Success!");
 
 				cancelButton.setText("Back");
 				registerButton.setDisable(true);

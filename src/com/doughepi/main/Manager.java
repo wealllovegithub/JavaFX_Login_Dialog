@@ -59,7 +59,7 @@ public class Manager
 			root.getStylesheets().add("css/global.css");
 			stage.getIcons().setAll(loginicon);
 			stage.setTitle("Login");
-			stage.setScene(new Scene(root, 231, 115));
+			stage.setScene(new Scene(root, 350, 200));
 			stage.setResizable(false);
 			LoginController loginController = fxmlLoader.<LoginController>getController();
 			loginController.initializeManager(this);
@@ -105,7 +105,7 @@ public class Manager
 			root.getStylesheets().add("css/global.css");
 			stage.setTitle("Register");
 			stage.getIcons().setAll(registericon);
-			stage.setScene(new Scene(root, 326, 190));
+			stage.setScene(new Scene(root, 350, 200));
 			stage.setResizable(false);
 			RegisterController registerController = fxmlLoader.<RegisterController>getController();
 			registerController.initializeManager(this);
