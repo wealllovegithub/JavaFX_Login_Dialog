@@ -1,7 +1,7 @@
 JavaFX Login Dialog
 ==
 JavaFX login dialog utilizing SQL to store usernames and passwords.
-
+Passwords are encrypted using SHA1.
 ***
 
 Login
