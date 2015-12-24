@@ -17,7 +17,7 @@
                 <Image url="/img/logo.png">
                 </Image>
             </ImageView>
-            <VBox spacing="15.0">
+            <VBox spacing="20.0">
                 <children>
                     <GridPane>
                         <padding>
